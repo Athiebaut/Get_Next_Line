@@ -101,23 +101,83 @@ char	*get_next_line(int fd)
 int main()
 {
 	int	fd;
-	int fd2
+	int	fd2;
+	int	fd3;
 	char *line = NULL;
 
 	fd = open("text.txt", O_RDONLY);
-	while ((line = get_next_line(fd)) != NULL)
-	{
-		printf("sortie : <%s>\n", line);
-		free(line);
-	}
+	fd2 = open("text2.txt", O_RDONLY);
+	fd3 = open("text3.txt", O_RDONLY);
+	//ligne 1
+	line = get_next_line(fd);
+	printf("sortie 1 : <%s>\n", line);
+	free(line);
+	line = get_next_line(fd2);
+	printf("sortie 2 : <%s>\n", line);
+	free(line);
+	line = get_next_line(fd3);
+	printf("sortie 3 : <%s>\n", line);
+	free(line);
+	//ligne 2
+	line = get_next_line(fd);
+	printf("sortie 1 : <%s>\n", line);
+	free(line);
+	line = get_next_line(fd2);
+	printf("sortie 2 : <%s>\n", line);
+	free(line);
+	line = get_next_line(fd3);
+	printf("sortie 3 : <%s>\n", line);
+	free(line);
+	//ligne 3
+	line = get_next_line(fd);
+	printf("sortie 1 : <%s>\n", line);
+	free(line);
+	line = get_next_line(fd2);
+	printf("sortie 2 : <%s>\n", line);
+	free(line);
+	line = get_next_line(fd3);
+	printf("sortie 3 : <%s>\n", line);
+	free(line);
+	//ligne 4
+	line = get_next_line(fd);
+	printf("sortie 1 : <%s>\n", line);
+	free(line);
+	line = get_next_line(fd2);
+	printf("sortie 2 : <%s>\n", line);
+	free(line);
+	line = get_next_line(fd3);
+	printf("sortie 3 : <%s>\n", line);
+	free(line);
+	//ligne 5
+	line = get_next_line(fd);
+	printf("sortie 1 : <%s>\n", line);
+	free(line);
+	line = get_next_line(fd2);
+	printf("sortie 2 : <%s>\n", line);
+	free(line);
+	line = get_next_line(fd3);
+	printf("sortie 3 : <%s>\n", line);
+	//ligne 6
+	line = get_next_line(fd);
+	printf("sortie 1 : <%s>\n", line);
+	free(line);
+	line = get_next_line(fd2);
+	printf("sortie 2 : <%s>\n", line);
+	free(line);
+	line = get_next_line(fd3);
+	printf("sortie 3 : <%s>\n", line);
+	//ligne 7
+	line = get_next_line(fd);
+	printf("sortie 1 : <%s>\n", line);
+	free(line);
+	line = get_next_line(fd2);
+	printf("sortie 2 : <%s>\n", line);
+	free(line);
+	line = get_next_line(fd3);
+	printf("sortie 3 : <%s>\n", line);
 	free(line);
 	close(fd);
-	fd2 = open("text1.txt", O_RDONLY);
-	while ((line = get_next_line(fd)) != NULL)
-	{
-		printf("sortie : <%s>\n", line);
-		free(line);
-	}
-	free(line);
-	close(fd);
+	close(fd2);
+	close(fd3);
+	return 0;
 }
