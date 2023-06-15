@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: athiebau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/25 15:47:18 by athiebau          #+#    #+#             */
-/*   Updated: 2023/05/25 15:47:20 by athiebau         ###   ########.fr       */
+/*   Created: 2023/05/25 16:14:50 by athiebau          #+#    #+#             */
+/*   Updated: 2023/05/25 16:14:52 by athiebau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 size_t	ft_strlen(const char *str)
 {
@@ -63,9 +63,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	while (s1[++i])
 		str[i] = s1[i];
 	while (s2[j])
-	{
 		str[i++] = s2[j++];
-	}
 	str[i] = '\0';
 	free(s1);
 	return (str);

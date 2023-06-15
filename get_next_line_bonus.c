@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: athiebau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/25 15:46:59 by athiebau          #+#    #+#             */
-/*   Updated: 2023/05/25 15:47:02 by athiebau         ###   ########.fr       */
+/*   Created: 2023/05/25 16:14:33 by athiebau          #+#    #+#             */
+/*   Updated: 2023/05/25 16:14:35 by athiebau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 static char	*read_and_save(int fd, char *save)
 {
@@ -94,15 +94,15 @@ static char	*get_the_line(char *save)
 
 char	*get_next_line(int fd)
 {
-	static char	*save;
+	static char	*save[1024];
 	char		*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	save = read_and_save(fd, save);
-	if (!save)
+	save[fd] = read_and_save(fd, save[fd]);
+	if (!save[fd])
 		return (NULL);
-	line = get_the_line(save);
-	save = save_next_line(save);
+	line = get_the_line(save[fd]);
+	save[fd] = save_next_line(save[fd]);
 	return (line);
 }
